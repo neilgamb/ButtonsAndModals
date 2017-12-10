@@ -1,0 +1,280 @@
+body {
+  height: 2000px;
+  background: #c94b4b;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #4b134f, #c94b4b);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #4b134f, #c94b4b);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.button {
+  position: fixed;
+  border: none;
+  transition: 200ms ease;
+  box-shadow: 3px 3px 5px 1px #441f1f;
+  background: rgba(228, 97, 97, 0.4);
+  animation: reveal 1s;
+  outline: none;
+}
+
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  background: rgba(228, 97, 97, 0.8);
+}
+
+.button-edit,
+.button-check {
+  bottom: 20px;
+  right: 20px;
+  height: 70px;
+  width: 70px;
+  border-radius: 70px;
+  font-size: 2rem;
+  z-index: 1;
+}
+
+.button-refresh,
+.button-users,
+.button-times,
+.button-add,
+.button-options {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  font-size: 1.2rem;
+}
+
+.button-users,
+.button-add,
+.button-options {
+  bottom: 35px;
+  right: 35px;
+  z-index: 0;
+  opacity: 0;
+}
+
+.button-refresh,
+.button-times {
+  right: 35px;
+  bottom: 105px;
+}
+
+.button-check {
+  background: rgb(218, 65, 85);
+}
+
+.hide {
+  display: none;
+}
+
+
+/* Animations */
+
+.reveal-animate-users {
+  animation-name: reveal-users;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes reveal-users {
+  0% {
+      opacity: 0;
+      right: 35px;
+  }
+  50% {
+      opacity: .5;
+      right: 200px;
+  }
+  100% {
+      opacity: 1;
+      right: 160px;
+  }
+}
+
+.hide-animate-users {
+  animation-name: hide-users;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes hide-users {
+  0% {
+      opacity: 1;
+      right: 160px;
+  }
+  50% {
+      opacity: .5;
+      right: 200px;
+  }
+  100% {
+      opacity: 0;
+      right: 35px;
+  }
+}
+
+.reveal-animate-add {
+  animation-name: reveal-add;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-delay: 50ms;
+}
+
+@keyframes reveal-add {
+  0% {
+      opacity: 0;
+      right: 35px;
+  }
+  50% {
+      opacity: .5;
+      right: 180px;
+  }
+  100% {
+      opacity: 1;
+      right: 106px;
+  }
+}
+
+.hide-animate-add {
+  animation-name: hide-add;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes hide-add {
+  0% {
+      opacity: 1;
+      right: 106px;
+  }
+  50% {
+      opacity: .5;
+      right: 180px;
+  }
+  100% {
+      opacity: 0;
+      right: 35px;
+  }
+}
+
+.reveal-animate-options {
+  animation-name: reveal-options;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-delay: 50ms;
+}
+
+@keyframes reveal-options {
+  0% {
+      opacity: 0;
+      right: 35px;
+  }
+  50% {
+      opacity: .5;
+      right: 250px;
+  }
+  100% {
+      opacity: 1;
+      right: 215px;
+  }
+}
+
+.hide-animate-options {
+  animation-name: hide-options;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes hide-options {
+  0% {
+      opacity: 1;
+      right: 215px;
+  }
+  50% {
+      opacity: .5;
+      right: 250px;
+  }
+  100% {
+      opacity: 0;
+      right: 35px;
+  }
+}
+
+.animate-times {
+  animation-name: pulse-times;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes pulse-times {
+  0% {
+      transform: scale(.9);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+  100% {
+      transform: scale(1.1);
+  }
+}
+
+.user-select-wrapper {
+  position: relative;
+  height: 95%;
+  width: 100%;
+}
+.user-select {
+  position: absolute;
+  bottom: 0px;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+.user-selection-toggle {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-selection-type {
+  width: 50%;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.user-selection-type.active {
+  background: #666;
+}
+
+.user-selection-display {
+  height: 100%;
+}
+
+.display-type {
+  display: none;
+  height: 100%;
+}
+
+.display-type.active {
+  display: block;
+}
+
+ul {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  margin: 0px;
+  height: 20%;
+}
